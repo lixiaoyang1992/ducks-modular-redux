@@ -2,9 +2,9 @@
 
 <img src="duck.jpg" align="right"/>
 
-我发现当我写一个redux应用时，每添加一个功能的一部分，我总是需要给每一个用例添加 `{actionTypes, actions, reducer}` 元组。我一直把这些分开放在不同的文件，甚至不同的文件夹里，但是百分之九十五的情况，只有一对 educer/actions需要它关联的action。
+我发现当我写一个redux应用时，每添加一个功能的一部分，我总是需要给每一个用例添加 `{actionTypes, actions, reducer}` 元组。我一直把这些分开放在不同的文件，甚至不同的文件夹里，但是百分之九十五的情况，只有一对 reducer/actions需要它关联的action。
 
-对我来说，这些琐碎的代码绑定到一个独立的模块中更有意义，并且很容易打包到依赖库里面。
+对我来说，这些琐碎的代码放到一个独立的模块中更有意义，并且易于打包到依赖库里面。
 
 ## 建议
 
@@ -50,12 +50,12 @@ export function removeWidget(widget) {
 
 一个模块
 
-1.必需 `export default` 一个叫 `reducer()` 的函数
-2.必需 `export` action creators 作为函数
-3.必需包涵 action types 以这种格式 `npm-module-or-app/reducer/ACTION_TYPE`
-4.如果另一个 reducer 需要监听这些action或者它是一个发布了的可重用的库，你需要导出 action types 以这种格式 `UPPER_SNAKE_CASE`
+1.必需 `export default` 一个叫 `reducer()` 的函数  
+2.必需 `export` action creators 作为函数  
+3.必需包涵 action types 以这种格式 `npm-module-or-app/reducer/ACTION_TYPE`  
+4.如果另一个 reducer 需要监听这些action或者它是一个发布了的可重用的库，你需要导出 action types 以这种格式 `UPPER_SNAKE_CASE`  
 
-这些相同的指南推荐给`{actionType, action, reducer}` bundles 被分享为可充用的Redux库。
+同样的指南也推荐给`{actionType, action, reducer}` bundles 被分享为可重用的Redux库的。
 
 ### 名字
 
@@ -96,7 +96,7 @@ bindActionCreators({loadWidgets, createWidget, updateWidget, removeWidget}, disp
 
 ### 实践
 
-迁移到这种代码架构很 [轻松的](https://github.com/erikras/react-redux-universal-hot-example/commit/3fdf194683abb7c40f3cb7969fd1f8aa6a4f9c57), 并且我预测它减少了未来的开发痛苦.
+迁移到这种代码架构很[轻松的](https://github.com/erikras/react-redux-universal-hot-example/commit/3fdf194683abb7c40f3cb7969fd1f8aa6a4f9c57), 并且我预测它减少了未来的开发痛苦.
 
 请提交任何反馈通过issue或者发推给[@erikras](https://twitter.com/erikras)。非常感谢。
 
@@ -105,7 +105,7 @@ bindActionCreators({loadWidgets, createWidget, updateWidget, removeWidget}, disp
 -- Erik Rasmussen
 
 
-### Translation
+### 翻译
 
 [한국어](https://github.com/JisuPark/ducks-modular-redux)
 
